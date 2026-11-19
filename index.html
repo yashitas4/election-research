@@ -1,0 +1,432 @@
+<title>Three Flipper Counties</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Robeson (N.C.), Cambria (Pa.) and Macomb (Mich.) voted for Obama, then Trump three times. What happened in 2026, with every figure linked to its source.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Public+Sans:wght@700;800&display=swap" rel="stylesheet">
+<style>
+/* Layout: a single readable column, like a well-made voter guide. Plain tables carry every number; color only repeats what the text already says. */
+:root{
+  --page:#f4f5f7; --surface:#ffffff; --ink:#14171c; --ink-2:#3b424d; --rule:#d3d8df; --band:#e9ecf1;
+  --rep:#a8282a; --rep-bg:#fbe7e6; --dem:#1a55a3; --dem-bg:#e2ecf8; --ok:#11683f; --ok-bg:#e0f2e8; --warn:#8a5300; --warn-bg:#fdf0d8;
+  --rob:#0b7a57; --cam:#a85205; --mac:#5240b8;
+  --display:"Public Sans", "Segoe UI", system-ui, sans-serif;
+  --body:"Atkinson Hyperlegible", Verdana, "Segoe UI", system-ui, sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --page:#101216; --surface:#191c21; --ink:#f1f2f4; --ink-2:#c9ced6; --rule:#343941; --band:#22262d;
+    --rep:#f59a95; --rep-bg:#3b1d1c; --dem:#86b6f3; --dem-bg:#172a44; --ok:#6fd3a0; --ok-bg:#12301f; --warn:#f2b866; --warn-bg:#3a2a10;
+    --rob:#3ccc9a; --cam:#f39a45; --mac:#a99cf4; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --page:#101216; --surface:#191c21; --ink:#f1f2f4; --ink-2:#c9ced6; --rule:#343941; --band:#22262d;
+  --rep:#f59a95; --rep-bg:#3b1d1c; --dem:#86b6f3; --dem-bg:#172a44; --ok:#6fd3a0; --ok-bg:#12301f; --warn:#f2b866; --warn-bg:#3a2a10;
+  --rob:#3ccc9a; --cam:#f39a45; --mac:#a99cf4; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{font-size:18px;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--page);color:var(--ink);font-family:var(--body);line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding-block:28px 64px;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:var(--page);padding:8px 14px;border-radius:6px;z-index:5}
+.skip:focus{left:16px}
+h1,h2,h3{font-family:var(--display);line-height:1.2;text-wrap:balance;margin:0}
+h1{font-size:clamp(2rem,6vw,2.8rem);font-weight:800;letter-spacing:-.01em}
+h2{font-size:1.55rem;font-weight:800;margin-bottom:.4em}
+h3{font-size:1.12rem;font-weight:700;margin:1.4em 0 .4em}
+p,li{max-width:65ch}
+p{margin:.55em 0}
+a{color:var(--dem);text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:2px}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.lede{font-size:1.18rem}
+section{margin-top:44px}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:18px 20px}
+.note{font-size:.92rem;color:var(--ink-2)}
+nav ul{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+nav a{display:inline-block;padding:6px 14px;border:2px solid var(--rule);border-radius:999px;text-decoration:none;font-weight:700;color:var(--ink);background:var(--surface)}
+nav a:hover{border-color:var(--ink)}
+.legend{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:10px;font-size:.92rem}
+.badge{display:inline-block;font-size:.78rem;font-weight:700;padding:1px 8px;border-radius:4px;white-space:nowrap;vertical-align:1px}
+.b-ok{background:var(--ok-bg);color:var(--ok)} .b-warn{background:var(--warn-bg);color:var(--warn)}
+.r{color:var(--rep);font-weight:700} .d{color:var(--dem);font-weight:700}
+.tag{display:inline-block;font-weight:700;font-size:.88rem;padding:1px 8px;border-radius:4px;white-space:nowrap}
+.tag.r{background:var(--rep-bg)} .tag.d{background:var(--dem-bg)} .tag.n{background:var(--band);color:var(--ink)}
+dl.terms{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin:0}
+dl.terms div{display:grid;gap:2px}
+dl.terms dt{font-weight:700}
+dl.terms dd{margin:0;color:var(--ink-2)}
+@media (min-width:640px){dl.terms{grid-template-columns:1fr 1fr}}
+.glance{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.glance .card{border-top:6px solid var(--c);display:flex;flex-direction:column;gap:6px}
+.glance h3{margin:0;color:var(--ink)}
+.glance .row{display:flex;justify-content:space-between;gap:10px;border-top:1px solid var(--rule);padding-top:6px;font-size:.95rem}
+.glance .row span:first-child{color:var(--ink-2)}
+.tablebox{overflow-x:auto;margin:10px 0;border:1px solid var(--rule);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.94rem;font-variant-numeric:tabular-nums}
+caption{text-align:left;font-weight:700;padding:12px 14px 4px;font-family:var(--display)}
+th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--rule);vertical-align:top}
+thead th{font-size:.82rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-2);background:var(--band)}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+td.num{text-align:right;white-space:nowrap}
+th.num{text-align:right}
+td small{display:block;color:var(--ink-2);font-size:.84rem}
+.chartbox{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:14px 10px 6px}
+.chartbox svg{display:block;width:100%;height:auto}
+.keys{display:flex;flex-wrap:wrap;gap:6px 18px;padding:0 8px 8px;font-weight:700;font-size:.92rem}
+.keys span::before{content:"";display:inline-block;width:22px;height:4px;border-radius:2px;background:var(--c);vertical-align:middle;margin-right:7px}
+.county{border-left:6px solid var(--c);padding-left:18px}
+.county > h2{color:var(--c)}
+.facts{padding-left:1.1em} .facts li{margin:.45em 0}
+.src{font-size:.85rem;color:var(--ink-2)} .src a{overflow-wrap:anywhere}
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+figure.q{margin:0;background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+figure.q blockquote{margin:0;font-size:1.1rem;font-weight:700;line-height:1.35}
+figure.q figcaption{font-size:.9rem;color:var(--ink-2)}
+.fixes li{margin:.5em 0}
+.summary{background:var(--surface);border:2px solid var(--ink);border-radius:12px;padding:22px}
+.summary ol{padding-left:1.3em;margin:0} .summary li{margin:.8em 0}
+.summary li b{display:block}
+.srclist{columns:2 300px;column-gap:28px;padding-left:1.1em;font-size:.92rem}
+.srclist li{break-inside:avoid;margin:.35em 0;overflow-wrap:anywhere}
+footer{margin-top:48px;font-size:.88rem;color:var(--ink-2);border-top:1px solid var(--rule);padding-top:14px}
+</style>
+
+<a class="skip" href="#main">Skip to main content</a>
+<div class="wrap">
+<header>
+  <p class="eyebrow">2026 midterm results · checked November 19, 2026</p>
+  <h1>Three Flipper Counties</h1>
+  <p class="lede">Robeson County in North Carolina, Cambria County in Pennsylvania and Macomb County in Michigan all voted for Barack Obama, then for Donald Trump three times. This page shows what each county did in the November 3, 2026 election and how that compares with the past.</p>
+  <p>Every number here was checked again against an official results page, a local newspaper, or a reference table. Each section links to where the figures came from. Figures we could not confirm were taken out, and the corrections are listed near the end.</p>
+  <nav aria-label="On this page">
+    <ul>
+      <li><a href="#words">Key words</a></li>
+      <li><a href="#glance">At a glance</a></li>
+      <li><a href="#history">2008 to 2026</a></li>
+      <li><a href="#robeson">Robeson</a></li>
+      <li><a href="#cambria">Cambria</a></li>
+      <li><a href="#macomb">Macomb</a></li>
+      <li><a href="#summary">Summary</a></li>
+      <li><a href="#sources">All sources</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+<section id="words" aria-labelledby="words-h">
+  <h2 id="words-h">Key words</h2>
+  <div class="card">
+    <dl class="terms">
+      <div><dt>Flipper county</dt><dd>A county that voted for one party's presidential candidate and then switched to the other party.</dd></div>
+      <div><dt>Margin</dt><dd>How far ahead the winner was, in percentage points. <span class="r">R +5</span> means the Republican got 5 points more than the Democrat. <span class="d">D +5</span> means the Democrat did.</dd></div>
+      <div><dt>Midterm</dt><dd>An election held between presidential elections (2018, 2022, 2026). The top race is usually governor or U.S. Senate.</dd></div>
+      <div><dt>Split ticket</dt><dd>Voting for a Democrat in one race and a Republican in another on the same ballot.</dd></div>
+      <div><dt>Unofficial / official</dt><dd>Results are unofficial until the county or state certifies them. Small changes can still happen before that.</dd></div>
+      <div><dt>Recount and protest</dt><dd>A recount counts the ballots again. A protest asks election officials to review a specific problem, such as votes cast in the wrong district.</dd></div>
+    </dl>
+  </div>
+  <div class="legend" aria-label="Labels used on this page">
+    <span><span class="badge b-ok">Checked</span> Matches the linked source</span>
+    <span><span class="badge b-warn">Still open</span> No final outcome reported yet</span>
+  </div>
+</section>
+
+<section id="glance" aria-labelledby="glance-h">
+  <h2 id="glance-h">At a glance</h2>
+  <div class="glance">
+    <div class="card" style="--c:var(--rob)">
+      <h3>Robeson County, N.C.</h3>
+      <div class="row"><span>2024 president</span><span class="r">R +27.6</span></div>
+      <div class="row"><span>2026 U.S. Senate</span><span class="r">R +0.4 (128 votes)</span></div>
+      <div class="row"><span>Change since 2022</span><span class="d">18.1 pts toward D</span></div>
+      <div class="row"><span>Status</span><span><span class="badge b-warn">Recount, protest open</span></span></div>
+    </div>
+    <div class="card" style="--c:var(--cam)">
+      <h3>Cambria County, Pa.</h3>
+      <div class="row"><span>2024 president</span><span class="r">R +39.6</span></div>
+      <div class="row"><span>2026 governor</span><span class="r">R +13.4</span></div>
+      <div class="row"><span>Change since 2022</span><span class="d">3.6 pts toward D</span></div>
+      <div class="row"><span>Status</span><span><span class="badge b-warn">Unofficial</span></span></div>
+    </div>
+    <div class="card" style="--c:var(--mac)">
+      <h3>Macomb County, Mich.</h3>
+      <div class="row"><span>2024 president</span><span class="r">R +13.7</span></div>
+      <div class="row"><span>2026 governor</span><span class="d">D +3.6</span></div>
+      <div class="row"><span>Change since 2022</span><span class="r">1.6 pts toward R</span></div>
+      <div class="row"><span>Status</span><span><span class="badge b-ok">Official</span></span></div>
+    </div>
+  </div>
+  <p class="note">"Change since 2022" compares the top race in each midterm: U.S. Senate in North Carolina, governor in Pennsylvania and Michigan.</p>
+</section>
+
+<section id="history" aria-labelledby="history-h">
+  <h2 id="history-h">From Obama to Trump and back toward the middle, 2008 to 2026</h2>
+  <p>The line shows the winning margin in each county's top race. Above the middle line, Republicans won. Below it, Democrats won. The table under the chart has the same numbers.</p>
+  <div class="chartbox">
+    <div class="keys" aria-hidden="true">
+      <span style="--c:var(--rob)">Robeson</span><span style="--c:var(--cam)">Cambria</span><span style="--c:var(--mac)">Macomb</span>
+    </div>
+    <div id="chart" role="img" aria-label="Line chart of winning margins from 2008 to 2026. All three counties moved from Democratic to Republican by 2016, peaked for Republicans in 2024, and moved back toward Democrats in 2026. Full numbers are in the table that follows."></div>
+  </div>
+  <div class="tablebox">
+    <table>
+      <caption>Winning margin in the top race, by year</caption>
+      <thead><tr><th scope="col">Year</th><th scope="col">Race</th><th scope="col" class="num">Robeson</th><th scope="col" class="num">Cambria</th><th scope="col" class="num">Macomb</th></tr></thead>
+      <tbody id="histbody"></tbody>
+    </table>
+  </div>
+  <p class="src">Sources: presidential years 2008 to 2024 from the county results tables on Wikipedia (<a href="https://en.wikipedia.org/wiki/Robeson_County,_North_Carolina">Robeson</a>, <a href="https://en.wikipedia.org/wiki/Cambria_County,_Pennsylvania">Cambria</a>, <a href="https://en.wikipedia.org/wiki/Macomb_County,_Michigan">Macomb</a>), which cite the official county returns. Midterms: Robeson from the N.C. State Board of Elections data files for <a href="https://er.ncsbe.gov/enr/20181106/data/results_78.txt">2018</a>, <a href="https://er.ncsbe.gov/enr/20221108/data/results_78.txt">2022</a> and <a href="https://er.ncsbe.gov/enr/20261103/data/results_78.txt">2026</a>; Cambria from <a href="https://en.wikipedia.org/wiki/2018_Pennsylvania_gubernatorial_election">Wikipedia, 2018 governor</a> and the county results site for <a href="https://results.enr.clarityelections.com/PA/Cambria/116141/web.307039/#/summary">2022</a> and <a href="https://results.enr.clarityelections.com/PA/Cambria/127572/web.345435/#/summary">2026</a>; Macomb from the <a href="https://macombgovdocs.org/clerk/electionresults/2018/November18/301.html">county clerk, 2018</a>, <a href="https://en.wikipedia.org/wiki/2022_Michigan_gubernatorial_election">Wikipedia, 2022 governor</a> and the <a href="https://macombgovdocs.org/clerk/pdfs/elect-2026-11-03-official-summary-results.pdf">county clerk's official 2026 results (PDF)</a>.</p>
+</section>
+
+<!-- ROBESON -->
+<section id="robeson" class="county" style="--c:var(--rob)" aria-labelledby="rob-h">
+  <p class="eyebrow">North Carolina</p>
+  <h2 id="rob-h">Robeson County: the biggest swing</h2>
+  <p>Trump won Robeson by 27.6 points in 2024. Two years later the Republican U.S. Senate candidate, Michael Whatley, won the county by just 128 votes. Democrat Roy Cooper won the Senate seat statewide with 58.8%. On the same ballot, Robeson voters re-elected their Democratic sheriff with 74.6%.</p>
+
+  <div class="tablebox">
+    <table>
+      <caption>2026 results in Robeson County (votes)</caption>
+      <thead><tr><th scope="col">Race</th><th scope="col" class="num">Democrat</th><th scope="col" class="num">Republican</th><th scope="col">Result</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Sheriff</th><td class="num">Wilkins 21,993</td><td class="num">Dimery 7,314</td><td><span class="tag d">D by 14,679</span><small>74.6% to 24.8%</small></td></tr>
+        <tr><th scope="row">U.S. Senate</th><td class="num">Cooper 14,488</td><td class="num">Whatley 14,616</td><td><span class="tag r">R by 128</span><small>49.0% to 48.6%. Cooper won statewide.</small></td></tr>
+        <tr><th scope="row">N.C. Supreme Court</th><td class="num">Earls 14,734</td><td class="num">Stevens 14,632</td><td><span class="tag d">D by 102</span></td></tr>
+        <tr><th scope="row">U.S. House, District 8</th><td class="num">Watson 9,334</td><td class="num">Harris 9,969</td><td><span class="tag r">R by 635</span></td></tr>
+        <tr><th scope="row">U.S. House, District 7</th><td class="num">Hardy 4,052</td><td class="num">Rouzer 5,794</td><td><span class="tag r">R by 1,742</span><small>Hardy conceded.</small></td></tr>
+        <tr><th scope="row">State Senate, District 24</th><td class="num">Hamm 12,292</td><td class="num">Britt 17,431</td><td><span class="tag r">R by 5,139 in county</span><small>District-wide Britt leads by 225 votes (28,055 to 27,830). <span class="badge b-warn">Recount requested</span></small></td></tr>
+        <tr><th scope="row">State House, District 47</th><td class="num">Hooper 9,640</td><td class="num">Lowery 11,284</td><td><span class="tag r">R by 1,644</span></td></tr>
+        <tr><th scope="row">State House, District 46</th><td class="num">Newton 3,614</td><td class="num">Jones 5,048</td><td><span class="tag r">R by 1,434</span></td></tr>
+        <tr><th scope="row">County commission, District 6</th><td class="num">Cox 2,417</td><td class="num">Edge 2,414</td><td><span class="tag d">D by 3</span><small><span class="badge b-warn">Under protest</span></small></td></tr>
+        <tr><th scope="row">County commission, District 8</th><td class="num">Ferguson 2,337</td><td class="num">Herndon 1,808</td><td><span class="tag d">D by 529</span><small>Republican incumbent lost.</small></td></tr>
+        <tr><th scope="row">County commission, District 4</th><td class="num">Warriax (unaffiliated) 1,701</td><td class="num">Locklear Dial 1,673</td><td><span class="tag n">Unaffiliated by 28</span><small>Republican incumbent lost and conceded.</small></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src"><span class="badge b-ok">Checked</span> Vote counts: <a href="https://er.ncsbe.gov/enr/20261103/data/results_78.txt">N.C. State Board of Elections, Robeson results data</a> (<a href="https://er.ncsbe.gov/?election_dt=11/03/2026&amp;county_id=78&amp;office=ALL&amp;contest=0">results page</a>). Statewide Senate: <a href="https://er.ncsbe.gov/enr/20261103/data/results_0.txt">statewide results data</a>. Recount and protest: <a href="https://borderbelt.org/candidates-request-recounts-in-border-belt-races/">Border Belt Independent</a>, <a href="https://www.robesonian.com/news/429722/hamm-requests-recount-in-nc-senate-race-against-britt">The Robesonian</a>.</p>
+
+  <h3>What stands out</h3>
+  <ul class="facts">
+    <li><b>An 18-point move in four years.</b> In the 2022 Senate race, Republican Ted Budd won Robeson by 18.5 points (58.2% to 39.7%). In 2026 the Republican margin was 0.4 points. <span class="src"><a href="https://er.ncsbe.gov/enr/20221108/data/results_78.txt">2022 data</a></span></li>
+    <li><b>Democratic turnout grew.</b> The Democratic Senate candidate got about 35% more votes than in 2022 (10,736 to 14,488). The Republican got about 7% fewer (15,732 to 14,616).</li>
+    <li><b>Two Republican commissioners lost.</b> Both had switched from Democrat to Republican in 2025. A third Republican seat (District 6) is down by 3 votes and under protest. <span class="src"><a href="https://borderbelt.org/republicans-lose-seats-robeson-county-board-of-commissioners/">Border Belt Independent</a></span></li>
+    <li><b>Party labels on the voter rolls are a weak guide.</b> By January 2026, unaffiliated voters (39.35%) had passed Democrats (39.22%) as the largest group. Republicans were 21.11%. <span class="src"><a href="https://www.robesonian.com/news/336756/unaffiliated-voters-surpass-democrats-for-most-registrations-in-robeson">The Robesonian</a></span></li>
+  </ul>
+
+  <h3>What local papers reported</h3>
+  <div class="quotes">
+    <figure class="q"><blockquote>“We’re hoping that it is the beginning of sanity in Robeson County.”</blockquote><figcaption>Batt, first vice chair, Robeson County Democratic Party. <a href="https://borderbelt.org/robeson-county-nc-election-results-2026/">Border Belt Independent</a></figcaption></figure>
+    <figure class="q"><blockquote>“It’s time we see some new faces.”</blockquote><figcaption>Renferd Scott, voter in Pembroke. <a href="https://borderbelt.org/republicans-lose-seats-robeson-county-board-of-commissioners/">Border Belt Independent</a></figcaption></figure>
+    <figure class="q"><blockquote>“…our Republican values held strong.”</blockquote><figcaption>Rep. Brenden Jones, N.C. House majority leader. <a href="https://www.robesonian.com/news/429290/election-roundup-britt-wilkins-lowery-jones-win-reelection">The Robesonian</a></figcaption></figure>
+    <figure class="q"><blockquote>“The voters made their choice 12 days ago.”</blockquote><figcaption>State Sen. Danny Britt, on the recount request. <a href="https://www.robesonian.com/news/429722/hamm-requests-recount-in-nc-senate-race-against-britt">The Robesonian</a></figcaption></figure>
+  </div>
+</section>
+
+<!-- CAMBRIA -->
+<section id="cambria" class="county" style="--c:var(--cam)" aria-labelledby="cam-h">
+  <p class="eyebrow">Pennsylvania</p>
+  <h2 id="cam-h">Cambria County: still solidly Republican</h2>
+  <p>Cambria was the first of the three to leave the Democrats, voting for Mitt Romney in 2012. In 2026 Republican Stacy Garrity won the county for governor with 55.8%, even though Democrat Josh Shapiro was re-elected statewide. The local paper's verdict was that the area stayed politically unchanged. The one big exception is Democrat Frank Burns, who won a 10th term in the state House.</p>
+
+  <div class="tablebox">
+    <table>
+      <caption>2026 results in Cambria County (votes, unofficial)</caption>
+      <thead><tr><th scope="col">Race</th><th scope="col" class="num">Democrat</th><th scope="col" class="num">Republican</th><th scope="col">Result</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Governor</th><td class="num">Shapiro 20,582</td><td class="num">Garrity 27,082</td><td><span class="tag r">R by 6,500</span><small>55.8% to 42.4%</small></td></tr>
+        <tr><th scope="row">U.S. House, District 13</th><td class="num">Farnham 17,700</td><td class="num">Joyce 30,763</td><td><span class="tag r">R by 13,063</span><small>63.4% to 36.5% in Cambria</small></td></tr>
+        <tr><th scope="row">State House, District 72</th><td class="num">Burns 13,346</td><td class="num">Rice 9,348</td><td><span class="tag d">D by 3,998</span><small>58.4% to 40.9%. Includes Johnstown.</small></td></tr>
+        <tr><th scope="row">State House, District 71</th><td class="num">No candidate</td><td class="num">Rigby 16,626</td><td><span class="tag r">R, unopposed</span></td></tr>
+        <tr><th scope="row">State House, District 73</th><td class="num">No candidate</td><td class="num">Kephart 4,838</td><td><span class="tag r">R, unopposed</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src"><span class="badge b-ok">Checked</span> <a href="https://results.enr.clarityelections.com/PA/Cambria/127572/web.345435/#/summary">Cambria County election results site</a>, marked “Unofficial Results,” last updated November 9, 2026. Turnout 56.6% (48,804 of 86,186 registered). Shapiro's statewide win: <a href="https://www.tribdem.com/news/local_news/election-2026-area-remains-politically-unchanged-amid-national-statewide-blue-wave/article_e3bb7972-f37b-4dcc-8392-4de72a121a07.html">The Tribune-Democrat</a>.</p>
+
+  <h3>What stands out</h3>
+  <ul class="facts">
+    <li><b>A small move toward Democrats.</b> In 2022 Republican Doug Mastriano won Cambria by 17.0 points (32,347 to 22,795). In 2026 the Republican margin was 13.4 points, a shift of 3.6. <span class="src"><a href="https://results.enr.clarityelections.com/PA/Cambria/116141/web.307039/#/summary">2022 county results</a></span></li>
+    <li><b>Registration now matches the vote.</b> As of November 16, 2026, 54.0% of registered voters were Republicans and 34.2% Democrats, a Republican lead of 17,106. <span class="src"><a href="https://www.pollcheck.com/registration/pennsylvania/">PollCheck, from Pa. Department of State data</a></span></li>
+    <li><b>Democrats last won Cambria for governor in 2014</b>, when Tom Wolf took 54.6%. <span class="src"><a href="https://en.wikipedia.org/wiki/2014_Pennsylvania_gubernatorial_election">Wikipedia, 2014 governor by county</a></span></li>
+    <li><b>Two Republican state representatives had no opponent</b> (Districts 71 and 73).</li>
+  </ul>
+
+  <h3>What local papers reported</h3>
+  <div class="quotes">
+    <figure class="q"><blockquote>“Losing Congress has real consequences.”</blockquote><figcaption>Jackie Kulback, chair, Cambria County Republican Party. <a href="https://www.tribdem.com/news/local_news/election-2026-area-remains-politically-unchanged-amid-national-statewide-blue-wave/article_e3bb7972-f37b-4dcc-8392-4de72a121a07.html">The Tribune-Democrat</a></figcaption></figure>
+    <figure class="q"><blockquote>“I wish my opponent all the best…”</blockquote><figcaption>Phil Rice, Republican candidate, 72nd District. <a href="https://www.tribdem.com/news/local_news/election-2026-burns-wins-10th-term-in-state-house-defeating-gop-challenger-rice/article_5a24e16d-9fb8-4caa-b3ed-37aeba58be91.html">The Tribune-Democrat</a></figcaption></figure>
+    <figure class="q"><blockquote>“Most Pennsylvanians know that this just isn’t working for them any more.”</blockquote><figcaption>Stacy Garrity, campaigning in Cambria days before the vote. <a href="https://www.tribdem.com/news/local_news/election-2026-gops-garrity-stumps-in-cambria-county-in-gubernatorial-race-pledges-to-turn-pennsylvania/article_dbde38ce-1230-4910-8fb7-8e7b7786eb9c.html">The Tribune-Democrat</a></figcaption></figure>
+  </div>
+</section>
+
+<!-- MACOMB -->
+<section id="macomb" class="county" style="--c:var(--mac)" aria-labelledby="mac-h">
+  <p class="eyebrow">Michigan</p>
+  <h2 id="mac-h">Macomb County: a split ticket, again</h2>
+  <p>Macomb voters picked Democrat Jocelyn Benson for governor and Republican Mike Rogers for U.S. Senate on the same ballot. Benson won statewide with 54.6%, and Democrat Abdul El-Sayed won the Senate seat statewide even though he lost Macomb. This is a familiar pattern: Macomb backed the Democrat for governor in 2018, 2022 and 2026, and Trump in 2016, 2020 and 2024.</p>
+
+  <div class="tablebox">
+    <table>
+      <caption>2026 results in Macomb County (votes, official)</caption>
+      <thead><tr><th scope="col">Race</th><th scope="col" class="num">Democrat</th><th scope="col" class="num">Republican</th><th scope="col">Result</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">County executive</th><td class="num">Hackel 251,442</td><td class="num">Moore 157,992</td><td><span class="tag d">D by 93,450</span><small>About 61.4%</small></td></tr>
+        <tr><th scope="row">Governor</th><td class="num">Benson 213,325</td><td class="num">James 198,261</td><td><span class="tag d">D by 15,064</span><small>51.0% to 47.4%</small></td></tr>
+        <tr><th scope="row">U.S. Senate</th><td class="num">El-Sayed 201,595</td><td class="num">Rogers 209,039</td><td><span class="tag r">R by 7,444</span><small>49.9% to 48.2%. El-Sayed won statewide.</small></td></tr>
+        <tr><th scope="row">Secretary of state</th><td class="num">Gilchrist 202,784</td><td class="num">Forlini 201,781</td><td><span class="tag d">D by 1,003</span></td></tr>
+        <tr><th scope="row">Attorney general</th><td class="num">Savit 199,306</td><td class="num">Lloyd 198,542</td><td><span class="tag d">D by 764</span></td></tr>
+        <tr><th scope="row">U.S. House, District 10 (Macomb part)</th><td class="num">Hines 163,881</td><td class="num">Bouchard 140,474</td><td><span class="tag d">D by 23,407</span></td></tr>
+        <tr><th scope="row">U.S. House, District 9 (Macomb part)</th><td class="num">Pooley 36,546</td><td class="num">McClain 63,010</td><td><span class="tag r">R by 26,464</span></td></tr>
+        <tr><th scope="row">State House, District 58</th><td class="num">Manetta 21,070</td><td class="num">Robinson 18,952</td><td><span class="tag d">D by 2,118</span></td></tr>
+        <tr><th scope="row">Straight-party ballots</th><td class="num">135,404</td><td class="num">123,328</td><td><span class="tag d">D by 12,076</span><small>Voters who picked one party for every partisan race</small></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src"><span class="badge b-ok">Checked</span> <a href="https://macombgovdocs.org/clerk/pdfs/elect-2026-11-03-official-summary-results.pdf">Macomb County Clerk, official 2026 summary results (PDF)</a>. Turnout 57.5% (422,612 of 734,542 registered). Statewide: <a href="https://en.wikipedia.org/wiki/2026_Michigan_gubernatorial_election">Wikipedia, 2026 governor</a>; <a href="https://www.fox2detroit.com/news/michigan-senate-results-abdul-el-sayed-vote-county">Fox 2 Detroit, Senate by county</a>.</p>
+
+  <h3>What stands out</h3>
+  <ul class="facts">
+    <li><b>The governor's race barely moved.</b> Whitmer won Macomb by 5.2 points in 2022 (51.8% to 46.6%). Benson won it by 3.6 in 2026. <span class="src"><a href="https://en.wikipedia.org/wiki/2022_Michigan_gubernatorial_election">Wikipedia, 2022 governor by county</a></span></li>
+    <li><b>The Senate race moved a lot.</b> Republican Mike Rogers won Macomb by 9.7 points in 2024 and by 1.8 points in 2026. <span class="src"><a href="https://www.fox2detroit.com/news/michigan-senate-results-abdul-el-sayed-vote-county">Fox 2 Detroit</a></span></li>
+    <li><b>Many voters mixed parties.</b> About 39% of people who voted did not cast a straight Democratic or Republican ballot.</li>
+    <li><b>Down-ballot statewide races were nearly tied</b> in Macomb: about 1,000 votes for secretary of state and under 800 for attorney general.</li>
+  </ul>
+
+  <h3>What local media reported</h3>
+  <div class="quotes">
+    <figure class="q"><blockquote>“…people at home just want us to work together…”</blockquote><figcaption>State Rep. Denise Mentzer, Democrat, after winning re-election. <a href="https://www.candgnews.com/articles/election-news/familiar-names-win-macomb-county-state-legislative-races/">C&amp;G Newspapers</a></figcaption></figure>
+    <figure class="q"><blockquote>“Macomb County is hard to read.”</blockquote><figcaption>WDIV's analysis after the 2018 midterm, when Macomb also swung back after voting for Trump. <a href="https://clickondetroit.com/all-about-michigan/2018/11/08/macomb-county-won-by-trump-in-2016-swings-back-to-michigan-democrats-in-key-races">ClickOnDetroit</a></figcaption></figure>
+  </div>
+</section>
+
+<section id="fixes" aria-labelledby="fixes-h">
+  <h2 id="fixes-h">What changed from the original explorer</h2>
+  <p>This page is based on the earlier “Three Flipper Counties Explorer.” Checking it against the sources found these problems, which are fixed or removed here:</p>
+  <ul class="fixes">
+    <li><b>Robeson commissioners:</b> the original said Republicans lost three of six seats. Only four seats were on the ballot, and two Republicans lost. A third is 3 votes behind and under protest, so it is not decided.</li>
+    <li><b>Cambria 2008:</b> Obama won 49.2% to 48.5%, not 49.4% to 48.7%.</li>
+    <li><b>Cambria registration:</b> the 54.0% / 34.2% figures are dated November 16, 2026, not October.</li>
+    <li><b>Mentzer quote:</b> the original shortened it into a sentence she did not say. It now uses her actual words.</li>
+    <li><b>Removed because no source confirmed them:</b> Robeson turnout (38.8% vs 53.8% statewide), Robeson 2016 and November 2026 registration shares, Cambria's 2016 registration lead, the “Trump +31” label on Burns's district, Macomb's 2024 straight-party numbers, the reader letter quote, and explanations about water contamination, the commission chairman and Lumbee federal recognition.</li>
+  </ul>
+</section>
+
+<section id="summary" aria-labelledby="summary-h">
+  <h2 id="summary-h">Summary of the overall results</h2>
+  <div class="summary">
+    <p><b>In short:</b> all three counties pulled back from their 2024 Trump highs in 2026. Robeson moved a long way and nearly flipped. Cambria moved a little and stayed firmly Republican. Macomb did what it usually does in midterms, backing a Democrat for governor while still leaning Republican in other races.</p>
+    <ol>
+      <li><b>All three are three-time Trump counties.</b>Trump's margin was larger in 2024 than in 2016 in each: Robeson R +4.3 to R +27.6, Cambria R +36.8 to R +39.6, Macomb R +11.5 to R +13.7.</li>
+      <li><b>2026 was a pullback, not a full reversal.</b>Republicans still won the top race in Robeson (by 128 votes) and Cambria (by 13.4 points). Macomb split: Democrat for governor, Republican for Senate.</li>
+      <li><b>Compared with the 2022 midterm, only Robeson moved sharply.</b>Robeson moved 18.1 points toward Democrats. Cambria moved 3.6 points toward Democrats. Macomb moved 1.6 points toward Republicans in the governor's race.</li>
+      <li><b>Voters split tickets for local Democrats they know.</b>Robeson's sheriff got 74.6%, Cambria's Frank Burns got 58.4%, and Macomb's county executive Mark Hackel got about 61%, all well ahead of their party's top candidate.</li>
+      <li><b>Turnout explains part of Robeson's swing.</b>Democratic Senate votes rose about 35% from 2022, while Republican votes fell about 7%.</li>
+      <li><b>Some results are not final.</b><span class="badge b-warn">Still open</span> As of November 19, 2026, no outcome had been reported for the State Senate District 24 recount or the Robeson commission District 6 protest. Cambria's results are still marked unofficial. Macomb's are official.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="sources" aria-labelledby="sources-h">
+  <h2 id="sources-h">All sources</h2>
+  <h3>Official results</h3>
+  <ul class="srclist">
+    <li><a href="https://er.ncsbe.gov/enr/20261103/data/results_78.txt">N.C. State Board of Elections: Robeson 2026 results data</a></li>
+    <li><a href="https://er.ncsbe.gov/enr/20261103/data/results_0.txt">N.C. State Board of Elections: statewide 2026 results data</a></li>
+    <li><a href="https://er.ncsbe.gov/enr/20221108/data/results_78.txt">N.C. State Board of Elections: Robeson 2022 results data</a></li>
+    <li><a href="https://er.ncsbe.gov/enr/20181106/data/results_78.txt">N.C. State Board of Elections: Robeson 2018 results data</a></li>
+    <li><a href="https://results.enr.clarityelections.com/PA/Cambria/127572/web.345435/#/summary">Cambria County: 2026 results (unofficial)</a></li>
+    <li><a href="https://results.enr.clarityelections.com/PA/Cambria/116141/web.307039/#/summary">Cambria County: 2022 results</a></li>
+    <li><a href="https://macombgovdocs.org/clerk/pdfs/elect-2026-11-03-official-summary-results.pdf">Macomb County Clerk: official 2026 results (PDF)</a></li>
+    <li><a href="https://macombgovdocs.org/clerk/electionresults/2018/November18/301.html">Macomb County Clerk: 2018 governor results</a></li>
+    <li><a href="https://www.pollcheck.com/registration/pennsylvania/">Pennsylvania voter registration by county (PollCheck)</a></li>
+  </ul>
+  <h3>Local newspapers and broadcasters</h3>
+  <ul class="srclist">
+    <li><a href="https://borderbelt.org/robeson-county-nc-election-results-2026/">Border Belt Independent: Robeson County election results</a></li>
+    <li><a href="https://borderbelt.org/republicans-lose-seats-robeson-county-board-of-commissioners/">Border Belt Independent: Republicans lose commission seats</a></li>
+    <li><a href="https://borderbelt.org/candidates-request-recounts-in-border-belt-races/">Border Belt Independent: Candidates request recounts</a></li>
+    <li><a href="https://www.robesonian.com/news/429290/election-roundup-britt-wilkins-lowery-jones-win-reelection">The Robesonian: Election roundup</a></li>
+    <li><a href="https://www.robesonian.com/news/429722/hamm-requests-recount-in-nc-senate-race-against-britt">The Robesonian: Hamm requests recount</a></li>
+    <li><a href="https://www.robesonian.com/news/336756/unaffiliated-voters-surpass-democrats-for-most-registrations-in-robeson">The Robesonian: Unaffiliated voters surpass Democrats</a></li>
+    <li><a href="https://www.tribdem.com/news/local_news/election-2026-area-remains-politically-unchanged-amid-national-statewide-blue-wave/article_e3bb7972-f37b-4dcc-8392-4de72a121a07.html">The Tribune-Democrat: Area remains politically unchanged</a></li>
+    <li><a href="https://www.tribdem.com/news/local_news/election-2026-burns-wins-10th-term-in-state-house-defeating-gop-challenger-rice/article_5a24e16d-9fb8-4caa-b3ed-37aeba58be91.html">The Tribune-Democrat: Burns wins 10th term</a></li>
+    <li><a href="https://www.tribdem.com/news/local_news/election-2026-gops-garrity-stumps-in-cambria-county-in-gubernatorial-race-pledges-to-turn-pennsylvania/article_dbde38ce-1230-4910-8fb7-8e7b7786eb9c.html">The Tribune-Democrat: Garrity campaigns in Cambria</a></li>
+    <li><a href="https://www.candgnews.com/articles/election-news/familiar-names-win-macomb-county-state-legislative-races/">C&amp;G Newspapers: Familiar names win Macomb races</a></li>
+    <li><a href="https://www.fox2detroit.com/news/michigan-senate-results-abdul-el-sayed-vote-county">Fox 2 Detroit: Senate results by county</a></li>
+    <li><a href="https://clickondetroit.com/all-about-michigan/2018/11/08/macomb-county-won-by-trump-in-2016-swings-back-to-michigan-democrats-in-key-races">WDIV ClickOnDetroit: Macomb swings back (2018)</a></li>
+  </ul>
+  <h3>Reference tables</h3>
+  <ul class="srclist">
+    <li><a href="https://en.wikipedia.org/wiki/Robeson_County,_North_Carolina">Wikipedia: Robeson County presidential results</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Cambria_County,_Pennsylvania">Wikipedia: Cambria County presidential results</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Macomb_County,_Michigan">Wikipedia: Macomb County presidential results</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_North_Carolina">Wikipedia: 2026 U.S. Senate election in North Carolina</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/2026_Michigan_gubernatorial_election">Wikipedia: 2026 Michigan governor election</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/2022_Michigan_gubernatorial_election">Wikipedia: 2022 Michigan governor election</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/2018_Pennsylvania_gubernatorial_election">Wikipedia: 2018 Pennsylvania governor election</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/2014_Pennsylvania_gubernatorial_election">Wikipedia: 2014 Pennsylvania governor election</a></li>
+  </ul>
+</section>
+</main>
+
+<footer>
+  <p>Data as of November 19, 2026. Percentages are rounded to one decimal place. Margins are the Republican share minus the Democratic share in each county. Based on the <a href="https://claude.ai/artifact/JgjY6CRJ3GLFH7MdoyKAdE">Three Flipper Counties Explorer</a>.</p>
+</footer>
+</div>
+
+<script>
+(function(){
+  var years=["2008","2012","2016","2018","2020","2022","2024","2026"];
+  var races=["President","President","President","Midterm*","President","Midterm*","President","Midterm*"];
+  var C=[
+    {id:"rob",name:"Robeson",m:[-13.8,-17.4,4.3,-15.3,18.6,18.5,27.6,0.4]},
+    {id:"cam",name:"Cambria",m:[-0.7,18.0,36.8,11.8,37.3,17.0,39.6,13.4]},
+    {id:"mac",name:"Macomb",m:[-8.6,-4.0,11.5,-3.5,8.1,-5.2,13.7,-3.6]}
+  ];
+  function fmt(v){return (v>=0?"R +":"D +")+Math.abs(v).toFixed(1);}
+  var tb=document.getElementById("histbody");
+  years.forEach(function(y,i){
+    var tr=document.createElement("tr");
+    var th=document.createElement("th");th.scope="row";th.textContent=y;tr.appendChild(th);
+    var rc=document.createElement("td");rc.textContent=races[i]==="President"?"President":(i===3?"Robeson: U.S. House · others: governor":i===5?"Robeson: U.S. Senate · others: governor":"Robeson: U.S. Senate · others: governor");tr.appendChild(rc);
+    C.forEach(function(c){var td=document.createElement("td");td.className="num "+(c.m[i]>=0?"r":"d");td.textContent=fmt(c.m[i]);tr.appendChild(td);});
+    tb.appendChild(tr);
+  });
+
+  var NS="http://www.w3.org/2000/svg", host=document.getElementById("chart");
+  function el(t,a,p,txt){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;p.appendChild(e);return e;}
+  function draw(){
+    host.innerHTML="";
+    var W=Math.max(300,host.clientWidth||700),narrow=W<520,H=narrow?280:340,l=narrow?46:56,r=narrow?62:84,t=14,b=44;
+    var svg=el("svg",{viewBox:"0 0 "+W+" "+H,"aria-hidden":"true",focusable:"false"},host);
+    function x(i){return l+i*(W-l-r)/7;} function y(v){return t+(45-v)/(45+20)*(H-t-b);}
+    [-20,-10,0,10,20,30,40].forEach(function(k){
+      el("line",{x1:l,x2:W-r,y1:y(k),y2:y(k),stroke:k===0?"var(--ink-2)":"var(--rule)","stroke-width":k===0?2:1},svg);
+      el("text",{x:l-8,y:y(k)+4,"text-anchor":"end","font-size":narrow?11:13,fill:"var(--ink-2)"},svg,k===0?"Even":(k>0?"R+":"D+")+Math.abs(k));
+    });
+    el("text",{x:W-r+6,y:y(42)+4,"font-size":12,fill:"var(--rep)","font-weight":700},svg,"↑ Rep.");
+    el("text",{x:W-r+6,y:y(-18)+4,"font-size":12,fill:"var(--dem)","font-weight":700},svg,"↓ Dem.");
+    years.forEach(function(yr,i){
+      el("text",{x:x(i),y:H-b+20,"text-anchor":"middle","font-size":narrow?11:13,"font-weight":700,fill:"var(--ink)"},svg,narrow?"’"+yr.slice(2):yr);
+      el("text",{x:x(i),y:H-b+36,"text-anchor":"middle","font-size":11,fill:"var(--ink-2)"},svg,races[i]==="President"?"Pres.":"Mid.");
+    });
+    var ends=[];
+    C.forEach(function(c){
+      el("path",{d:c.m.map(function(v,i){return(i?"L":"M")+x(i).toFixed(1)+" "+y(v).toFixed(1);}).join(""),fill:"none",stroke:"var(--"+c.id+")","stroke-width":3,"stroke-linejoin":"round"},svg);
+      c.m.forEach(function(v,i){el("circle",{cx:x(i),cy:y(v),r:4.5,fill:"var(--"+c.id+")",stroke:"var(--surface)","stroke-width":1.5},svg);});
+      ends.push({c:c,y:y(c.m[7])});
+    });
+    ends.sort(function(a,b){return a.y-b.y;});
+    for(var i=1;i<ends.length;i++){if(ends[i].y-ends[i-1].y<16)ends[i].y=ends[i-1].y+16;}
+    ends.forEach(function(e){el("text",{x:x(7)+9,y:e.y+4,"font-size":narrow?11:13,"font-weight":700,fill:"var(--"+e.c.id+")"},svg,narrow?e.c.name.slice(0,3)+".":e.c.name);});
+  }
+  draw();
+  var tm;window.addEventListener("resize",function(){clearTimeout(tm);tm=setTimeout(draw,120);});
+})();
+</script>
