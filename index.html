@@ -212,6 +212,40 @@ h3.sub{margin:26px 0 6px}
 .summary a{color:#bcd6ff}
 .srclist{columns:2 320px;column-gap:28px;padding-left:1.1em;font-size:.92rem}
 .srclist li{break-inside:avoid;margin:.35em 0;overflow-wrap:anywhere}
+/* county profiles */
+:root{--k1:#6d4fa3;--k2:#b9770e;--k3:#2e8a6a;--k4:#c0507a;--k5:#4f6d7a;--k6:#8c939d;--k7:#9a7b3c;--k8:#3d7fa8}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--k1:#a98fe0;--k2:#e8a94a;--k3:#5cc79f;--k4:#ea86ab;--k5:#8fb0bf;--k6:#9aa2ae;--k7:#d1b06a;--k8:#7cb7dc}}
+:root[data-theme="dark"]{--k1:#a98fe0;--k2:#e8a94a;--k3:#5cc79f;--k4:#ea86ab;--k5:#8fb0bf;--k6:#9aa2ae;--k7:#d1b06a;--k8:#7cb7dc}
+details.profile{margin-top:20px;border:2px solid var(--c);border-radius:14px;background:var(--surface);overflow:hidden}
+details.profile > summary{cursor:pointer;list-style:none;padding:14px 18px;background:var(--cs);font-size:1rem;color:var(--ink-2);display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+details.profile > summary::-webkit-details-marker{display:none}
+details.profile > summary span{font-family:var(--display);font-weight:900;font-size:1.25rem;color:var(--c)}
+details.profile > summary::after{content:"▾ hide";margin-left:auto;font-weight:700;color:var(--ink);font-size:.9rem}
+details.profile:not([open]) > summary::after{content:"▸ show"}
+.pbody{padding:6px 18px 20px}
+.ptiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:12px}
+.ptile{background:var(--cs);border-radius:10px;padding:12px 14px}
+.ptile b{display:block;font-family:var(--display);font-weight:900;font-size:1.45rem;line-height:1.1;color:var(--c)}
+.ptile span{display:block;font-size:.88rem;margin-top:3px}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px 22px;margin-top:6px}
+.pgrid > div{min-width:0}
+.pbody h4{font-family:var(--display);font-size:1.05rem;margin:18px 0 8px}
+.pseg{display:flex;height:34px;border-radius:6px;overflow:hidden;gap:2px;background:var(--surface)}
+.pseg div{display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:.8rem;white-space:nowrap;overflow:hidden;min-width:0}
+.plegend{list-style:none;padding:0;margin:8px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:2px 14px;font-size:.9rem}
+.plegend li{display:flex;align-items:center;gap:7px;max-width:none}
+.plegend i{flex:0 0 14px;height:14px;border-radius:3px;background:var(--k)}
+.plegend b{margin-left:auto;font-variant-numeric:tabular-nums}
+.ages{display:grid;gap:3px}
+.ages .hb{grid-template-columns:52px 1fr;gap:8px}
+.ages .htrack{height:22px}
+.ages .hfill{font-size:.78rem;padding-right:6px}
+.pfacts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0 22px;margin:0}
+.pfacts div{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--rule);padding:7px 0;font-size:.94rem}
+.pfacts dt{color:var(--ink-2)} .pfacts dd{margin:0;font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
+.psrc{font-size:.84rem;color:var(--ink-2);margin-top:14px;max-width:none}
+.psrc a{overflow-wrap:anywhere}
+
 /* interaction */
 .hint{font-size:.9rem;color:var(--ink-2);margin:.1em 0 .7em;max-width:none}
 .hint::before{content:"☝ ";}
@@ -256,6 +290,7 @@ footer{margin-top:48px;font-size:.88rem;color:var(--ink-2);border-top:1px solid 
     <li><a href="#trend">The trend</a></li>
     <li><a href="#change">What changed</a></li>
     <li><a href="#paper">Party on paper</a></li>
+    <li><a href="#rob-profile">County profiles</a></li>
     <li><a href="#robeson">Robeson</a></li>
     <li><a href="#cambria">Cambria</a></li>
     <li><a href="#macomb">Macomb</a></li>
@@ -418,6 +453,7 @@ footer{margin-top:48px;font-size:.88rem;color:var(--ink-2);border-top:1px solid 
     <p>Trump won Robeson by 27.6 points in 2024. In 2026 the Republican Senate candidate, Michael Whatley, won it by 128 votes, while Democrat Roy Cooper won the seat statewide with 58.8%. On the same ballot, voters re-elected the Democratic sheriff with 74.6%.</p>
   </div>
   <div class="cbody">
+    <details class="profile" open id="rob-profile"><summary><span>County profile</span> people, ages, education, income, voters and districts</summary><div class="pbody" data-county="rob"></div></details>
     <div class="fig">
       <h3><span class="num">10</span>Robeson's 2026 ballot, race by race</h3>
       <p class="take"><b>Takeaway:</b> the same voters gave a Democrat a 50-point win for sheriff and a Republican a narrow win for Senate.</p>
@@ -472,6 +508,7 @@ footer{margin-top:48px;font-size:.88rem;color:var(--ink-2);border-top:1px solid 
     <p>Republican Stacy Garrity won Cambria for governor with 55.8% while losing the state by about 22 points. The local paper said the area stayed politically unchanged. The exception is Democrat Frank Burns, who won a 10th term in the state House.</p>
   </div>
   <div class="cbody">
+    <details class="profile" open id="cam-profile"><summary><span>County profile</span> people, ages, education, income, voters and districts</summary><div class="pbody" data-county="cam"></div></details>
     <div class="fig">
       <h3><span class="num">11</span>Cambria's 2026 ballot, race by race</h3>
       <p class="take"><b>Takeaway:</b> Burns won his district by 17.5 points. Every other contested race went Republican.</p>
@@ -512,6 +549,7 @@ footer{margin-top:48px;font-size:.88rem;color:var(--ink-2);border-top:1px solid 
     <p>Macomb picked Democrat Jocelyn Benson for governor and Republican Mike Rogers for U.S. Senate on the same ballot. Benson won statewide with 54.6%, and Democrat Abdul El-Sayed won the Senate seat statewide even though he lost Macomb. Macomb backed the Democrat for governor in 2018, 2022 and 2026, and Trump in 2016, 2020 and 2024.</p>
   </div>
   <div class="cbody">
+    <details class="profile" open id="mac-profile"><summary><span>County profile</span> people, ages, education, income, voters and districts</summary><div class="pbody" data-county="mac"></div></details>
     <div class="fig">
       <h3><span class="num">14</span>Macomb's 2026 ballot, race by race</h3>
       <p class="take"><b>Takeaway:</b> Democrats won most races, but several were very close, and the Republican won the Senate race.</p>
@@ -1130,6 +1168,82 @@ raceFig("f14",[
   var holder=h("div");f15.parentNode.insertBefore(holder,f15.nextSibling);
   sc=scrubber(holder,{n:5,labels:Y,value:4,aria:"Choose an election year",onChange:function(i){pickFn(i);ro.innerHTML=texts[i];}});
   holder.appendChild(ro);
+})();
+
+/* ---------- County profiles ---------- */
+(function(){
+  var CR="https://censusreporter.org/profiles/";
+  var P={
+   rob:{name:"Robeson",cr:CR+"05000US37155-robeson-county-nc/",
+    tiles:[["118,624","people (2024)"],["36.4","median age"],["$45,740","median household income"],["16.5%","adults with a bachelor's degree or more"],["78,440","registered voters"],["38.8%","voted in 2026"]],
+    ages:[14,15,13,11,13,11,12,8,3],
+    race:[["American Indian",37,"--k1"],["Black",24,"--k2"],["White",23,"--k3"],["Hispanic (any race)",12,"--k4"],["Two or more races",4,"--k5"],["Asian",1,"--k6"]],
+    edu:[18,38,27,11,5],inc:[55,29,14,2],
+    reg:{title:"Voter registration by party, Nov. 14, 2026",parts:[["Democratic",29686,"--dem"],["Unaffiliated",32043,"--una"],["Libertarian and Green",267,"--other"],["Republican",16444,"--rep"]],total:78440,
+      extra:{title:"Registered voters by race, Nov. 14, 2026",parts:[["American Indian",25561,"--k1"],["Black",18398,"--k2"],["White",19914,"--k3"],["Other, multiracial, Asian or Pacific Islander",4578,"--k5"],["Not stated",9989,"--k6"]],total:78440,note:"3,036 registered voters identify as Hispanic (any race). 39,065 are women, 31,560 men and 7,815 did not state."}},
+    facts:[["County seat","Lumberton"],["Land area","947.3 sq mi"],["People per sq mi","125.2"],["Households","44,345"],["Below poverty line","23.6%"],["Per capita income","$22,675"],["High school grad or higher","81.8%"],["Foreign-born","7.1%"],["Veterans","5,077"],["Homes owner-occupied","67%"],["Median home value","$104,000"],["Women","52%"]],
+    dist:[["U.S. House","7th and 8th districts","Both won by Republicans in 2026: Rouzer (7th), Harris (8th)"],["N.C. Senate","24th district","Britt (R) leads district-wide by 225 votes; recount requested"],["N.C. House","46th and 47th districts","Jones (R) and Lowery (R) re-elected"],["County commission","8 members, single-member districts","Two Republican incumbents lost in 2026; a third seat is under protest"]],
+    vsrc:'<a href="https://vt.ncsbe.gov/RegStat/Results/?date=11/14/2026">N.C. State Board of Elections registration statistics</a>; turnout from <a href="https://er.ncsbe.gov/enr/20261103/data/county.txt">N.C. State Board of Elections</a>; districts from <a href="https://er.ncsbe.gov/enr/20261103/data/results_78.txt">2026 Robeson results</a> and <a href="https://en.wikipedia.org/wiki/Robeson_County,_North_Carolina">Wikipedia</a>'},
+   cam:{name:"Cambria",cr:CR+"05000US42021-cambria-county-pa/",
+    tiles:[["130,108","people (2024)"],["45.8","median age"],["$61,786","median household income"],["25.4%","adults with a bachelor's degree or more"],["86,151","registered voters"],["56.6%","voted in 2026"]],
+    ages:[10,12,11,10,12,12,16,11,6],
+    race:[["White",89,"--k3"],["Two or more races",5,"--k5"],["Black",3,"--k2"],["Hispanic (any race)",2,"--k4"],["Asian",1,"--k6"]],
+    edu:[5,43,27,15,10],inc:[40,33,23,4],
+    reg:{title:"Voter registration by party, Nov. 16, 2026",parts:[["Democratic",29441,"--dem"],["No affiliation",8029,"--una"],["Other parties",2134,"--other"],["Republican",46547,"--rep"]],total:86151},
+    facts:[["County seat","Ebensburg"],["Largest city","Johnstown"],["Land area","688 sq mi"],["People per sq mi","189.1"],["Households","58,011"],["Below poverty line","14.7%"],["Per capita income","$34,126"],["High school grad or higher","95.5%"],["Foreign-born","0.9%"],["Veterans","8,868"],["Homes owner-occupied","77%"],["Median home value","$127,200"]],
+    dist:[["U.S. House","13th district (whole county)","Joyce (R) re-elected"],["Pa. Senate","35th district (whole county)","Wayne Langerholc (R); not on the 2026 ballot"],["Pa. House","71st, 72nd and 73rd districts","Rigby (R) and Kephart (R) unopposed; Burns (D) re-elected"],["County commissioners","3 members","Republican majority"]],
+    vsrc:'<a href="https://www.pollcheck.com/registration/pennsylvania/">PollCheck, from Pa. Department of State counts</a>; turnout from <a href="https://results.enr.clarityelections.com/PA/Cambria/127572/web.345435/#/summary">Cambria County</a>; districts from <a href="https://en.wikipedia.org/wiki/Cambria_County,_Pennsylvania">Wikipedia</a> and <a href="https://en.wikipedia.org/wiki/Pennsylvania%27s_13th_congressional_district">Pa. 13th district</a>'},
+   mac:{name:"Macomb",cr:CR+"05000US26099-macomb-county-mi/",
+    tiles:[["886,175","people (2024)"],["41.4","median age"],["$77,702","median household income"],["28.3%","adults with a bachelor's degree or more"],["734,542","registered voters"],["57.5%","voted in 2026"]],
+    ages:[11,12,13,14,12,14,13,9,4],
+    race:[["White",72,"--k3"],["Black",13,"--k2"],["Asian",6,"--k6"],["Two or more races",5,"--k5"],["Hispanic (any race)",3,"--k4"]],
+    edu:[9,28,34,18,10],inc:[31,30,30,8],
+    reg:{title:"Straight-party ballots, 2026 (Michigan has no party registration)",parts:[["Straight Democratic",135404,"--dem"],["No straight major-party ballot",163880,"--other"],["Straight Republican",123328,"--rep"]],total:422612},
+    facts:[["County seat","Mount Clemens"],["Largest city","Warren"],["Land area","479.4 sq mi"],["People per sq mi","1,848.7"],["Households","362,586"],["Below poverty line","11%"],["Per capita income","$40,772"],["High school grad or higher","90.6%"],["Foreign-born","12.5%"],["Veterans","35,742"],["Homes owner-occupied","74%"],["Median home value","$266,500"]],
+    dist:[["U.S. House","9th and 10th districts","McClain (R) carried the 9th; Hines (D) carried Macomb's part of the 10th"],["Mich. Senate","Parts of districts 9, 10, 11, 12, 24 and 25",""],["Mich. House","Parts of districts 11–14, 57–63, 65 and 66","Manetta (D) won the 58th"],["County government","County executive and 13-member board","Executive Mark Hackel (D); board 8 Republicans, 5 Democrats"]],
+    vsrc:'<a href="https://macombgovdocs.org/clerk/pdfs/elect-2026-11-03-official-summary-results.pdf">Macomb County Clerk official 2026 results</a> (registered voters, straight-party ballots, legislative districts); <a href="https://en.wikipedia.org/wiki/Michigan%27s_10th_congressional_district">Mich. 10th</a> and <a href="https://en.wikipedia.org/wiki/Michigan%27s_9th_congressional_district">9th district</a> pages; <a href="https://en.wikipedia.org/wiki/Macomb_County,_Michigan">Wikipedia, Macomb County</a>'}
+  };
+  var AGE=["0–9","10–19","20–29","30–39","40–49","50–59","60–69","70–79","80+"];
+  var EDU=[["No high school diploma","--k6"],["High school","--k5"],["Some college","--k2"],["Bachelor's","--k1"],["Graduate degree","--k8"]];
+  var INC=[["Under $50K","--k6"],["$50K–$100K","--k5"],["$100K–$200K","--k1"],["Over $200K","--k8"]];
+  function seg(host,title,parts,fmtV){
+    host.appendChild(h("h4",null,title));
+    var tot=parts.reduce(function(a,p){return a+p[1];},0),bar=h("div","pseg"),aria=[];
+    parts.forEach(function(p){var pc=p[1]/tot*100,d=h("div",null,pc>=10?Math.round(pc)+"%":"");d.style.flex="0 0 calc("+pc+"% - 2px)";d.style.background="var("+p[2]+")";if(p[2]==="--una")d.style.color="#1b1400";bar.appendChild(d);aria.push(p[0]+" "+fmtV(p,pc));});
+    bar.setAttribute("role","img");bar.setAttribute("aria-label",title+": "+aria.join(", "));host.appendChild(bar);
+    var ul=h("ul","plegend");ul.setAttribute("aria-hidden","true");
+    parts.forEach(function(p){var pc=p[1]/tot*100,li=h("li");var sw=h("i");sw.style.setProperty("--k","var("+p[2]+")");li.appendChild(sw);li.appendChild(h("span",null,p[0]));li.appendChild(h("b",null,fmtV(p,pc)));ul.appendChild(li);});
+    host.appendChild(ul);
+  }
+  var pct=function(p){return p[1]+"%";},cnt=function(p,pc){return nf(p[1])+" ("+pc.toFixed(1)+"%)";};
+  KEYS.forEach(function(k){
+    var d=P[k],host=document.querySelector('.pbody[data-county="'+k+'"]');if(!host)return;
+    var tiles=h("div","ptiles");d.tiles.forEach(function(t){var e=h("div","ptile");e.appendChild(h("b",null,t[0]));e.appendChild(h("span",null,t[1]));tiles.appendChild(e);});host.appendChild(tiles);
+    var g=h("div","pgrid");host.appendChild(g);
+    var c1=h("div");g.appendChild(c1);
+    c1.appendChild(h("h4",null,"Ages"));
+    var ag=h("div","ages hbars");c1.appendChild(ag);
+    var mx=Math.max.apply(null,d.ages);
+    var rows=d.ages.map(function(v,i){var row=h("div","hb");row.appendChild(h("div","lab",AGE[i]));var tr=h("div","htrack"),f=h("div","hfill",v+"%");f.style.width=Math.max(14,v/mx*100)+"%";tr.appendChild(f);row.appendChild(tr);ag.appendChild(row);return row;});
+    var aro=readout();aro.style.fontSize=".92rem";c1.appendChild(aro);
+    pickRows(ag,rows,function(i){var under20=d.ages[0]+d.ages[1],over60=d.ages[6]+d.ages[7]+d.ages[8];aro.innerHTML="<b>Ages "+AGE[i]+":</b> "+d.ages[i]+"% of "+d.name+" residents. Overall, "+under20+"% are under 20 and "+over60+"% are 60 or older.";},6);
+    var c2=h("div");g.appendChild(c2);
+    seg(c2,"Race and ethnicity",d.race,pct);
+    seg(c2,"Education (adults 25 and older)",d.edu.map(function(v,i){return [EDU[i][0],v,EDU[i][1]];}),pct);
+    seg(c2,"Household income",d.inc.map(function(v,i){return [INC[i][0],v,INC[i][1]];}),pct);
+    var c3=h("div");g.appendChild(c3);
+    seg(c3,d.reg.title,d.reg.parts,cnt);
+    if(d.reg.extra){seg(c3,d.reg.extra.title,d.reg.extra.parts,cnt);c3.appendChild(h("p","psrc",d.reg.extra.note));}
+    var c4=h("div");g.appendChild(c4);
+    c4.appendChild(h("h4",null,"Districts and local government"));
+    var tb=h("div","tablebox"),tbl=h("table","data"),thd=h("thead"),trh=h("tr");
+    ["Office","District","2026 result or current holder"].forEach(function(x){var th=h("th",null,x);th.scope="col";trh.appendChild(th);});thd.appendChild(trh);tbl.appendChild(thd);
+    var tbd=h("tbody");d.dist.forEach(function(r){var tr=h("tr"),th=h("th",null,r[0]);th.scope="row";tr.appendChild(th);tr.appendChild(h("td",null,r[1]));tr.appendChild(h("td",null,r[2]||"—"));tbd.appendChild(tr);});tbl.appendChild(tbd);tb.appendChild(tbl);c4.appendChild(tb);
+    host.appendChild(h("h4",null,"More facts"));
+    var dl=h("dl","pfacts");d.facts.forEach(function(f){var w=h("div");w.appendChild(h("dt",null,f[0]));w.appendChild(h("dd",null,f[1]));dl.appendChild(w);});host.appendChild(dl);
+    var src=h("p","psrc");src.innerHTML="Sources: people, ages, race, education, income and housing from the Census Bureau's American Community Survey, 2024 1-year estimates, via <a href=\""+d.cr+"\">Census Reporter</a> (margins of error apply; race groups other than Hispanic are non-Hispanic). Voters and districts: "+d.vsrc+".";
+    host.appendChild(src);
+  });
 })();
 })();
 </script>
